@@ -1,26 +1,24 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
-<head>
-  <title>{% block title %}{% endblock %}</title>
-  {% load bootstrap5 %}
-  {% bootstrap_css %}
-  {% bootstrap_javascript %}
-</head>
-<body>
-
-<div class="container">
-  <ul class="nav bg-info">
-    <li class="nav-item">
-      <a class="nav-link link-light" href="/">HOME</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link link-light" href="/members">MEMBERS</a>
-    </li>
-  </ul>
-
-  {% block content %}
-  {% endblock %}
-</div>
-</body>
-<script></script>
+  <head>
+    <title>
+        {% block title %}
+            Home
+        {% endblock %}
+    </title>
+    {% load bootstrap5 %} 
+    {% bootstrap_css %} 
+    {% bootstrap_javascript %}
+  </head>
+  <body>
+    <div class="container">
+      {% include 'quiz/navbar.html' %} 
+      {% block content %} 
+      {% endblock %}
+    </div>
+  </body>
+  <script src="{% static 'jquery-3.7.1.slim.js' %}"></script>
+  <script src="{% static 'popper.min.js' %}"></script>
+  </script>
 </html>
