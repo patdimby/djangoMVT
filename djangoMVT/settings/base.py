@@ -13,7 +13,7 @@ SECRET_KEY = env("SECRET_KEY")
 
 DEBUG = env("DEBUG")
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 DJANGO_APPS = [
     "django.contrib.admin",
@@ -95,7 +95,7 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator", },
 ]
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = env('LANGUAGE_CODE')
 TIME_ZONE = env('TIME_ZONE')
 USE_I18N = True
 USE_TZ = True
@@ -116,7 +116,7 @@ ANYMAIL = {
 }
 
 EMAIL_BACKEND = "anymail.backends.sendinblue.EmailBackend"
-DEFAULT_FROM_EMAIL = "falimanananalaoka@gmail.com"
+DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
 
 DATABASES = {
     "default": {
